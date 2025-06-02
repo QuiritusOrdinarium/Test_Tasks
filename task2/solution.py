@@ -18,25 +18,25 @@ while ContinueSearch:
     for animal in box.find_all('a'):
         if litera=='':
             litera=animal.text[0]
-            print(litera)
+            #print(litera)
         else:
             if animal.text[0]==litera:
                 i=i+1
                 # print(i)
                 # print(animal.text[0])
             else:
-                print(animal.text)
-                print(i)
-                print(animal.text[0])
-                print(litera)
+                #print(animal.text)
+                #print(i)
+                #print(animal.text[0])
+                #print(litera)
                 if litera in animal_dict.keys():
                     animal_dict[litera]=animal_dict[litera]+i
                 else:
                     animal_dict[litera] = i
-                print(animal_dict)
+                #print(animal_dict)
                 #if animal.text[0]!='A':
                 litera = animal.text[0]
-                print(litera)
+                #print(litera)
                 i=1
                 #else:
                 #    ContinueSearch = False

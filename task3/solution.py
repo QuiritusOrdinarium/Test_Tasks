@@ -60,17 +60,8 @@ def appearance(intervals: dict[str, list[int]]) -> int:
         i=0
         #for i in range(0,len(pupil_intervals)-2):
         while i<=len(pupil_intervals)-2:
-            #print('i='+str(i))
-           # if i in deleted_index:
-           #     continue
-           # print(len(pupil_intervals))
             j=len(pupil_intervals)-1
             while j!=i:
-            #for j in range(len(pupil_intervals)-1,i,-1):
-                #print(pupil_intervals)
-                #print(j)
-               # if j in deleted_index:
-               #     continue
                 if concat_intervals(pupil_intervals[i],pupil_intervals[j])!=0:
                     pupil_intervals[i]=concat_intervals(pupil_intervals[i],pupil_intervals[j])
                     pupil_intervals.pop(j)
@@ -95,19 +86,19 @@ def appearance(intervals: dict[str, list[int]]) -> int:
            # print(type(lesson_interval[1]))
             if in_interval(lesson_interval,pupil_int)!=0:
                 for tutor_int in tutor_intervals:
-                    print(pupil_int)
-                    print(cut_interval(lesson_interval,pupil_int))
-                    print(tutor_int)
+                    #print(pupil_int)
+                   # print(cut_interval(lesson_interval,pupil_int))
+                   # print(tutor_int)
                     add_time=in_interval(cut_interval(lesson_interval,pupil_int),tutor_int)
-                    print(add_time)
+                   # print(add_time)
                     if tutor_int[0]<lesson_interval[1]:
                         result_time=result_time+add_time
-                        print(result_time)
+                       # print(result_time)
                     else:
                         break
             else:
                 break
-        print(result_time)
+        #print(result_time)
         return result_time
 tests = [
     {'intervals': {'lesson': [1594663200, 1594666800],
@@ -130,6 +121,6 @@ tests = [
 if __name__ == '__main__':
    for i, test in enumerate(tests):
        test_answer = appearance(test['intervals'])
-    #print (test_answer)
+       print (test_answer)
        assert test_answer == test['answer'], f'Error on test case {i}, got {test_answer}, expected {test["answer"]}'
 
